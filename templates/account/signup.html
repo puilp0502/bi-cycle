@@ -1,0 +1,151 @@
+{% extends "account/layout.html" %}
+
+{% block content %}
+
+<div class="row join-layout">
+	<div class="col s12 m6 offset-m4">
+		<span class="cut-line">회원가입&nbsp;</span>
+		<div class="card ">
+			<div class="card-content login-box">
+				<div class="row">
+					<form class="col s12" method="post" action="/account/useradd">
+					{% csrf_token %}
+						<div class="row">
+							<div class="input-field col l12">
+								<i class="material-icons prefix">perm_identity</i>
+								<input id="icon_prefix" type="text" name="name" class="validate">
+								<label for="icon_prefix">닉네임(영어로)</label>
+							</div>
+							<div class="input-field col l12">
+								<i class="material-icons prefix">perm_identity</i>
+								<input id="icon_prefix2" type="text" name="username" class="validate" id="user_id">
+								<label for="icon_prefix2">ID</label>
+							</div>
+							<div class="input-field col l12">
+								<i class="material-icons prefix">vpn_key</i>
+								<input id="icon_password" type="password" name= "password" class="validate" >
+								<label for="icon_password">Password</label>
+							</div>
+							<div class="input-field col l12">
+								<i class="material-icons prefix">call</i>
+								<input id="icon_telephone" type="text" name= "phone_number" class="validate">
+								<label for="icon_telephone">call</label>
+							</div>
+							<div class="input-field col l12">
+								<div class="divider"></div>
+							</div>							
+							<div class="input-field col l12">
+								<i class="material-icons prefix">email</i>
+								<input id="icon_email" name="email" type="email" class="validate" >
+								<label for="icon_email">Email</label>
+							</div>
+							<div class="col l2"><i class="material-icons prefix">room</i></div>
+							<div class="col l10">
+								<select name="area" class="browser-default col l6" id="user_area">
+									<option value="" disabled selected> 시/도</option>
+									<option value="1">서울특별시</option>
+									<option value="2">부산광역시</option>
+									<option value="3">대구광역시</option>
+									<option value="4">인천광역시</option>
+									<option value="5">광주광역시</option>
+									<option value="6">울산광역시</option>
+									<option value="7">세종특별자치시</option>
+									<option value="8">경기도</option>
+									<option value="9">강원도</option>
+									<option value="10">충청도</option>
+									<option value="11">대구광역시</option>
+									<option value="12">경상도</option>
+									<option value="13">제주특별자치도</option>
+								</select>
+
+								<select class="browser-default col l6" id="user_area2">
+									<option value="" disabled selected>군/구</option>
+									<option value="1">종로구</option>
+									<option value="2">중구</option>
+									<option value="3">용산구</option>
+									<option value="4">성동구</option>
+									<option value="5">광진구</option>
+									<option value="6">동대문구</option>
+									<option value="7">중랑구</option>
+									<option value="8">성북구</option>
+									<option value="9">강북구</option>
+									<option value="10">도봉구</option>
+									<option value="11">노원구</option>
+									<option value="12">은평구</option>
+									<option value="13">서대문구</option>
+									<option value="14">마포구</option>
+									<option value="15">양천구</option>
+									<option value="16">강서구</option>
+									<option value="17">구로구</option>
+									<option value="18">금천구</option>
+									<option value="19">영등포구</option>
+									<option value="20">동작구</option>
+									<option value="21">관악구</option>
+									<option value="22">서초구</option>
+									<option value="23">강남구</option>
+									<option value="24">송파구</option>
+									<option value="25">강동구</option>
+								</select>							
+							</div>
+						</div>
+						<button type = "submit" class="col l12 waves-effect waves-light btn-large login-button" OnClick="
+						var engandnum = /^[A-Za-z0-9+]*$/;
+						if($('#icon_prefix').val()!='' && engandnum.test($('#icon_prefix').val())){
+
+						 	if($('#icon_prefix2').val()!='')
+						 	{
+						 		if($('#icon_password').val()!='')
+						 		{
+						 			if($('#icon_telephone').val()!=''){
+						 				if($('#icon_email').val()!=''){
+						 					
+						 					if($('#user_area').val()!=null){
+
+						 						if($('#user_area2').val()!=null){
+
+						 							
+						 							return true;
+						 						}
+						 						else{
+						 							$('#user_area2').focus();
+						 						}
+						 					}
+						 					else{
+						 						$('#user_area').focus();
+						 					}
+						 				}
+						 				else{
+						 					$('#icon_email').focus();
+						 				}
+						 			}
+						 			else{
+						 				$('#icon_telephone').focus();
+						 			}
+						 		}
+						 		else{
+						 			$('#icon_password').focus();
+								 }
+						 	}
+						 	else{
+						 	$('#icon_prefix2').focus();
+						 }
+
+						 }
+						 else{
+						 	$('#icon_prefix').focus();
+						 }
+
+						return false;
+					
+					
+						">Sign up!!</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+
+</script>
+{% endblock %}

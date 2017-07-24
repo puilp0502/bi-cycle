@@ -1,0 +1,94 @@
+body{
+	background-color: #f3f3f3;
+	background-size: 100vw !important;
+}
+
+.content{
+padding-top :80px;
+}
+.collection .collection-item.active {
+    background-color: rgb(250,0,0);
+    color: #eafaf9;
+}
+.collection a.collection-item {
+    display: block;
+    transition: .25s;
+    color: rgb(250,0,0);
+}
+.container{
+	width: 80%;
+}
+.custom-nav{
+	height: 60px;
+	position: fixed;
+	z-index: 8;
+}
+.nav-account{
+	margin-right: 10%;
+}
+.nav-search{
+	margin-left: 10%;
+}
+.main-search{
+	color: #000 !important;
+	background-color: #ececec !important;
+	border: none !important;
+	height: 30px !important;
+	width: 130% !important;
+}
+.nav-color {
+	background-color: #fff;
+	 position: fixed;
+}
+
+.nav-logo{
+	margin-top: 10px;
+	color : rgb(250,0,0) !important;
+}
+#left-shoptext{
+	color : #606369;
+
+}
+.left-list{
+	margin-top: 8px;
+	color: #63666e;
+}
+.event{
+	color: #000;
+}
+.event-sub{
+	color: #b1b1b1 !important;
+}
+
+
+.stuck-left {
+    position: fixed;
+    width: 12%;
+}
+.stuck-right {
+    position: fixed;
+    width: 20% !important;
+}
+.search-icon{
+	background-color: rgba(0,0,0,0);
+	border: none;
+	height: 60px;
+}
+.btn, .btn-large {
+    text-decoration: none;
+    color: #fff;
+    background-color: #e83b11;
+    text-align: center;
+    letter-spacing: .5px;
+    transition: .2s ease-out;
+    cursor: pointer;
+}
+.btn:hover, .btn-large:hover {
+    text-decoration: none;
+    color: #fff;
+    background-color: rgb(255,128,128);
+    text-align: center;
+    letter-spacing: .5px;
+    transition: .2s ease-out;
+    cursor: pointer;
+}

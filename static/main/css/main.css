@@ -1,0 +1,22 @@
+
+.item-size{
+	padding: 2px !important;
+	height: 150px;
+}
+.tab-custom{
+	background-color: #263238;
+	height: 40px;
+}
+.tab-font{
+	color: #fff !important;
+}
+.tabs .indicator {
+    position: absolute;
+    bottom: 0;
+    height: 2px;
+    background-color: #eeff41;
+    will-change: left, right;
+}
+.lend-user{
+	color: rgb(250,0,0);
+}

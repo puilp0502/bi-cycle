@@ -1,0 +1,32 @@
+body{
+	background-color: rgb(52,71,80);
+}
+
+
+.container{
+	width: 90%;
+}
+.nav-color {
+	background-color: #fff;
+}
+.custom-nav{
+	height: 52px;
+	   line-height: 52px;
+}
+.nav-logo{
+	color : #263238 !important;
+}
+#left-shoptext{
+	color : #606369;
+
+}
+.left-list{
+	margin-top: 8px;
+	color: #63666e;
+}
+.event{
+	color: #000;
+}
+.event-sub{
+	color: #b1b1b1 !important;
+}

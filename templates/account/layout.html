@@ -1,0 +1,92 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <!--Import Google Icon Font-->
+   <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   <!--Import materialize.css-->
+
+   <!--Let browser know website is optimized for mobile-->
+   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+   <!-- Compiled and minified CSS -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+
+   <link rel ="stylesheet" href="{% static 'main/css/base.css' %}" />
+   <link rel ="stylesheet" href="{% static 'account/css/login.css' %}" />
+   <link rel ="stylesheet" href="{% static 'account/css/signup.css' %}" />
+   <!-- Compiled and minified JavaScript -->
+   <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+
+</head>
+
+<body style="background-image: url('../../static/main/img/clothup.png');background-attachment:fixed;">
+   <nav class="custom-nav">
+      <div class="nav-wrapper nav-color">
+         <a href="/" class="brand-logo center nav-logo"><img src="{% static 'main/img/clothup-logo.png' %}" width="120px;"></a>
+         <ul id="nav-mobile" class="left hide-on-med-and-down nav-search">
+        <li><input type="text" class ="main-search" name="" /></li>
+        <li><button type="submit" class="search-icon"><i class="material-icons search-icon">search</i></button></li>
+      </ul>
+         <ul id="nav-mobile" class="right nav-account hide-on-med-and-down">
+            <li><a class = "red-text text-darken-2" href="/account/signup">SIGNUP</a></li>
+            <li><a class = "red-text text-darken-2" href="/account/login">LOGIN</a></li>
+            <!--  <input type="text" name=""> -->
+         </ul>
+      </div>
+   </nav>
+   <div class = "container">
+      <div class="row content">
+         <div class="col l2">
+            <div class="stuck-left">
+               <div class="collection ">
+                        <a href="/category/아우터" class="collection-item {% if category == '아우터' %}active{% endif %}">아우터</a>
+                        <a href="/category/셔츠" class="collection-item {% if category == '셔츠' %}active{% endif %}">셔츠/블라우스</a>
+                        <a href="/category/교복" class="collection-item {% if category == '교복' %}active{% endif %}">교복</a>
+                        <a href="/category/상의" class="collection-item {% if category == '상의' %}active{% endif %}">상의</a>
+                        <a href="/category/하의" class="collection-item {% if category == '하의' %}active{% endif %}">하의</a>
+                        <a href="/category/원피스" class="collection-item {% if category == '원피스' %}active{% endif %}">원피스</a>
+                        <a href="/category/신발" class="collection-item {% if category == '신발' %}active{% endif %}">신발</a>
+                        <a href="/category/가방 " class="collection-item {% if category == '가방' %} active {% endif %}">가방</a>
+
+                    </div>
+               <div class="card ">
+                  <div class="card-content">
+                     <span class="card-title">거래랭킹</span>
+                     <p><img src="{% static 'main/img/GOLD.png' %}" width="15px">1. stealstick</p>
+                     <p><img src="{% static 'main/img/SILVER.png' %}" width="15px">2. stillstick</p>
+                     <p><img src="{% static 'main/img/BRONZE.png' %}" width="15px">3. admin</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col l7">
+            <div class="row">
+               
+               <div class="col l12">
+                  {% block content %}{% endblock %}
+               </div>
+
+            </div>
+         </div>
+         <div class="col l3">
+            <div class="row">
+               {% block rightside %}{% endblock %}
+            </div>
+         </div>
+      </div>
+      <!--Import jQuery before materialize.js-->
+            <script src="http://code.jquery.com/jquery-2.1.2.min.js" crossorigin="anonymous"></script>
+      <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+
+
+      <script> $(document).ready(function(){
+         $('ul.tabs').tabs('select_tab', 'tab_id');
+      });
+
+   </script>
+   <script>  $('select').material_select('destroy');</script>
+</body>
+</html>

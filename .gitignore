@@ -188,3 +188,4 @@ tags
 # End of https://www.gitignore.io/api/vim,python,django,pycharm
 # Development settings
 develop.py
+.idea/
