@@ -1,5 +1,6 @@
 {% extends "account/layout.html" %}
 
+{% block title %}회원가입{% endblock %}
 {% block content %}
 
 <div class="row join-layout">
@@ -8,7 +9,7 @@
 		<div class="card ">
 			<div class="card-content login-box">
 				<div class="row">
-					<form class="col s12" method="post" action="/account/useradd">
+					<form class="col s12" method="post" action="{% url 'accounts:signup' %}">
 					{% csrf_token %}
 						<div class="row">
 							<div class="input-field col l12">
@@ -41,7 +42,7 @@
 							</div>
 							<div class="col l2"><i class="material-icons prefix">room</i></div>
 							<div class="col l10">
-								<select name="area" class="browser-default col l6" id="user_area">
+								<select name="area" class="browser-default col l12" id="user_area">
 									<option value="" disabled selected> 시/도</option>
 									<option value="1">서울특별시</option>
 									<option value="2">부산광역시</option>
@@ -57,35 +58,6 @@
 									<option value="12">경상도</option>
 									<option value="13">제주특별자치도</option>
 								</select>
-
-								<select class="browser-default col l6" id="user_area2">
-									<option value="" disabled selected>군/구</option>
-									<option value="1">종로구</option>
-									<option value="2">중구</option>
-									<option value="3">용산구</option>
-									<option value="4">성동구</option>
-									<option value="5">광진구</option>
-									<option value="6">동대문구</option>
-									<option value="7">중랑구</option>
-									<option value="8">성북구</option>
-									<option value="9">강북구</option>
-									<option value="10">도봉구</option>
-									<option value="11">노원구</option>
-									<option value="12">은평구</option>
-									<option value="13">서대문구</option>
-									<option value="14">마포구</option>
-									<option value="15">양천구</option>
-									<option value="16">강서구</option>
-									<option value="17">구로구</option>
-									<option value="18">금천구</option>
-									<option value="19">영등포구</option>
-									<option value="20">동작구</option>
-									<option value="21">관악구</option>
-									<option value="22">서초구</option>
-									<option value="23">강남구</option>
-									<option value="24">송파구</option>
-									<option value="25">강동구</option>
-								</select>							
 							</div>
 						</div>
 						<button type = "submit" class="col l12 waves-effect waves-light btn-large login-button" OnClick="
